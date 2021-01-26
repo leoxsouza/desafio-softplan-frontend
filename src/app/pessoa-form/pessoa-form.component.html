@@ -1,0 +1,70 @@
+<div class="margin-20">
+
+    <div>
+        <h1 *ngIf="acao == 'visualizar'">Visualizar Pessoa</h1>
+        <h1 *ngIf="acao == 'editar'">Editar Pessoa</h1>
+        <h1 *ngIf="acao == 'cadastrar'">Cadastrar Pessoa</h1>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-6">
+            <label for="nome"><h3>Nome *</h3></label>
+            <input id="nome" type="text" pInputText [(ngModel)]="pessoa.nome" maxlength="200" [disabled]="acao == 'visualizar'" required>
+        </div>
+
+        <div class="p-field p-col-6">
+            <label for="email"><h3>Email</h3></label>
+            <input id="email" type="email" pInputText [(ngModel)]="pessoa.email" maxlength="200" [disabled]="acao == 'visualizar'" [email]="true">
+        </div>
+
+        <div class="p-field p-col-6">
+            <h3>CPF *</h3>
+            <p-inputMask mask="999.999.999-99" [(ngModel)]="pessoa.cpf" placeholder="999.999.999-99" cpfValidator=""
+            [unmask]="true" [disabled]="acao == 'visualizar'" [required]="true"></p-inputMask>
+        </div>
+
+        <div class="p-field p-col-6">
+
+            <h3>Data de Nascimento *</h3>
+            <p-calendar [(ngModel)]="pessoa.dtNascimento" [showIcon]="true" dateFormat="dd/mm/yy"
+            [monthNavigator]="true" [yearNavigator]="true" yearRange="1950:2021"
+                                    name="dataRegistro" [disabled]="acao == 'visualizar'" [required]="true">
+            </p-calendar>
+        </div>
+
+        <div class="p-field p-col-4">
+            <h3>Sexo</h3>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="sexo" value="F" [(ngModel)]="pessoa.sexo" inputId="sexoF" [disabled]="acao == 'visualizar'"></p-radioButton>
+                <label for="sexoF" style="margin-right: 10px;">Feminino</label>
+
+                <p-radioButton name="sexo" value="M" [(ngModel)]="pessoa.sexo" inputId="sexoM" [disabled]="acao == 'visualizar'"></p-radioButton>
+                <label for="sexoM">Masculino</label>
+            </div>
+        </div>
+
+        <div class="p-field p-col-4">
+            <label for="nacionalidade"><h3>Nacionalidade</h3></label>
+            <input id="nacionalidade" type="text" pInputText [(ngModel)]="pessoa.nacionalidade" maxlength="200" [disabled]="acao == 'visualizar'">
+        </div>
+
+        <div class="p-field p-col-4">
+            <label for="naturalidade"><h3>Naturalidade</h3></label>
+            <input id="naturalidade" type="text" pInputText [(ngModel)]="pessoa.naturalidade" maxlength="200" [disabled]="acao == 'visualizar'">
+        </div>
+
+        <div class="p-col-4">
+            <button pButton label="Voltar" class="ui-button p-button-secondary" icon="pi pi-chevron-left" routerLink="/pessoas">
+            </button>
+        </div>
+
+        <div class="p-col-4"></div>
+
+        <div class="p-col-4">
+            <button pButton label="Salvar" class="ui-button p-button-success" icon="pi pi-save" (click)="salvarPessoa()" [disabled]="!pessoa.nome || !pessoa.cpf || !pessoa.dtNascimento">
+            </button>
+
+        </div>
+    </div>
+
+</div>

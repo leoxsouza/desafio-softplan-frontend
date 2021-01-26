@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    -webkit-box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .margin-y-10 {
+    margin: 10px 0 10px 0;
+  }
+  
+  .label-orange {
+    /* color: #FFC107; */
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .div-login {
+    width: 99%;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .margin-20 {
+    margin: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .margin-right-30 {
+    margin-right: 30px;
+  }
+  
+  .color-red {
+    color: rgba(250, 7, 7, 0.699);
+  }
+  
+  .click {
+    cursor: pointer;
+  }
+  
+  .color-blue {
+    color: rgb(0, 89, 253);
+  }
+  
+  .margin-right-5 {
+    margin-right: 5px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgb(197, 193, 193) !important;
+  }
+  
+  .color-green {
+    color: green;
+  }
+  
+  .margin-left-15 {
+    margin-left: 15px;
+  }
+  
+  .color-blue {
+    color: blue;
+  }
