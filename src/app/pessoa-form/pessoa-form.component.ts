@@ -51,6 +51,11 @@ export class PessoaFormComponent implements OnInit {
   }
 
   salvarPessoa() {
+    if (document.getElementById("cpf")?.className.includes('ng-invalid')) {
+      this.messageService.add({severity:'error', summary: MensagemUtil.ERRO, detail: 'Cpf inválido!'})
+      return;
+    }
+
     this.blockUI.start( MensagemUtil.BLOCKUI_SALVANDO );
     this.pessoaService.salvar(this.pessoa).pipe(finalize(() => this.blockUI.stop()))
     .subscribe( () => {

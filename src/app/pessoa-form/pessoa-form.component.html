@@ -19,7 +19,7 @@
 
         <div class="p-field p-col-6">
             <h3>CPF *</h3>
-            <p-inputMask mask="999.999.999-99" [(ngModel)]="pessoa.cpf" placeholder="999.999.999-99" cpfValidator=""
+            <p-inputMask mask="999.999.999-99" [(ngModel)]="pessoa.cpf" placeholder="999.999.999-99" cpfValidator="" id="cpf"
             [unmask]="true" [disabled]="acao == 'visualizar'" [required]="true"></p-inputMask>
         </div>
 
