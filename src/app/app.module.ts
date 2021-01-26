@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { AuthenticationService } from './service/authentication.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PessoaListComponent } from './pessoa-list/pessoa-list.component';
@@ -28,7 +26,6 @@ import { CpfPipe } from './pipes/cpf.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     PessoaListComponent,
     PessoaFormComponent,
     CpfValidatorDirective,
@@ -50,7 +47,7 @@ import { CpfPipe } from './pipes/cpf.pipe';
     RadioButtonModule,
     ToastModule
   ],
-  providers: [AuthenticationService, ConfirmationService, MessageService, 
+  providers: [ConfirmationService, MessageService, 
   {provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
